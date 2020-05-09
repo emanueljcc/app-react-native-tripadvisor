@@ -1,0 +1,12 @@
+import React from "react";
+import { View, Text, Button } from "react-native";
+import * as firebase from "firebase";
+
+export default function UserLoggued() {
+    return (
+        <View>
+            <Text>UserLoggued</Text>
+            <Button title="Cerrar sesion" onPress={() => firebase.auth().signOut()} />
+        </View>
+    );
+}
