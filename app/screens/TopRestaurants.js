@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { View } from "react-native";
 import Toast from "react-native-easy-toast";
+import Loading from "../components/Loading";
 
 import { firebaseApp } from "../utils/firebase";
 import firebase from "firebase/app";
@@ -40,10 +41,14 @@ export default function TopRestaurants(props) {
 
     return (
         <View>
-            <ListTopRestaurants
-                restaurants={restaurants}
-                navigation={navigation}
-            />
+            {restaurants.length === 0 ? (
+                <Loading isVisible text="Cargando TopRanking"/>
+            ) : (
+                <ListTopRestaurants
+                    restaurants={restaurants}
+                    navigation={navigation}
+                />
+            )}
             <Toast ref={toastRef} position="center" opacity={0.9} />
         </View>
     );

@@ -12,8 +12,8 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#00a680"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -40,6 +40,7 @@
         "ACCESS_FINE_LOCATION"
       ]
     },
-    "description": ""
+    "description": "app desarrollada con react native",
+    "githubUrl": "https://github.com/emanueljcc/app-react-native-tripadvisor.git"
   }
 }

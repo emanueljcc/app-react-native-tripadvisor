@@ -173,18 +173,6 @@ function RestaurantInfo(props) {
             iconType: "material-community",
             action: null,
         },
-        {
-            text: "111 222 333",
-            iconName: "phone",
-            iconType: "material-community",
-            action: null,
-        },
-        {
-            text: "11@gggg.com",
-            iconName: "at",
-            iconType: "material-community",
-            action: null,
-        },
     ];
 
     return (
