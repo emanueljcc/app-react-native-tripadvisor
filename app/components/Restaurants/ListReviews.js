@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import { Button, Avatar, Rating } from "react-native-elements";
 import { firebaseApp } from "../../utils/firebase";
 import firebase from "firebase/app";
@@ -68,13 +68,17 @@ export default function ListReviews(props) {
                 </View>
             )}
 
+            {reviews.length === 0 ? (
+                <ActivityIndicator style={{ marginTop: 15 }} size="large" color="#00a680" />
+            ) : (
+                reviews.map((review, i) => (
+                    <Review
+                        key={i}
+                        review={review}
+                    />
+                ))
+            )}
 
-            {reviews.map((review, i) => (
-                <Review
-                    key={i}
-                    review={review}
-                />
-            ))}
 
         </View>
     );
