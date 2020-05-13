@@ -12,6 +12,7 @@ export default function ListReviews(props) {
     const { navigation, idRestaurant } = props;
     const [userLogged, setUserLogged] = useState(false);
     const [reviews, setReviews] = useState([]);
+    const [changeTimeOut, setChangeTimeOut] = useState(true);
 
     firebase.auth().onAuthStateChanged(user => {
         user ? setUserLogged(true) : setUserLogged(false);
@@ -34,7 +35,14 @@ export default function ListReviews(props) {
                     setReviews(resultReviews);
 
                 });
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setChangeTimeOut(false);
+        }, 3000);
+
+    }, [changeTimeOut])
 
     return (
         <View>
@@ -69,7 +77,7 @@ export default function ListReviews(props) {
             )}
 
             {reviews.length === 0 ? (
-                <ActivityIndicator style={{ marginTop: 15 }} size="large" color="#00a680" />
+                changeTimeOut && <ActivityIndicator style={{ marginTop: 15 }} size="large" color="#00a680" />
             ) : (
                 reviews.map((review, i) => (
                     <Review
@@ -78,7 +86,6 @@ export default function ListReviews(props) {
                     />
                 ))
             )}
-
 
         </View>
     );
