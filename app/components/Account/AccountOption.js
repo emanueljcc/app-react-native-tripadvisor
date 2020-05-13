@@ -12,7 +12,6 @@ export default function AccountOptions(props) {
     const [showModal, setShowModal] = useState(false);
     const [renderComponent, setRenderComponent] = useState(null);
     const provider = userInfo && userInfo.providerData[0].providerId;
-    console.log(provider)
 
     const selectedComponent = (key) => {
         switch (key) {
@@ -81,6 +80,7 @@ export default function AccountOptions(props) {
                             ? false
                             : true
                     }
+                    disabledStyle={styles.hidden}
                 />
             ))}
             {renderComponent && (
@@ -134,5 +134,8 @@ const styles = StyleSheet.create({
     menuItems: {
         borderBottomWidth: 1,
         borderBottomColor: "#e3e3e3",
+    },
+    hidden: {
+        display: "none",
     }
 });

@@ -25,7 +25,20 @@
       "supportsTablet": false
     },
     "android": {
-      "permissions": ["CAMERA_ROLL", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+      "package": "com.emanuelcastillo.apprestaurantsreactnative",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAb7YColRfcbkI1QouaV8pGnpAOc8pcRDQ"
+        }
+      },
+      "permissions": [
+        "CAMERA_ROLL",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "description": ""
   }
